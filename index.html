@@ -229,6 +229,8 @@
     font-size:17px;
     margin:0;
   }
+  .case-title a{color:inherit;text-decoration:none;border-bottom:1px solid var(--teal);}
+  .case-title a:hover, .case-title a:focus-visible{color:var(--teal);}
   .badge{
     font-family:'IBM Plex Mono',monospace;
     font-size:10px;
@@ -260,6 +262,31 @@
     border:1px solid var(--line);
     border-radius:var(--radius);
     padding:3px 8px;
+  }
+
+  .case-links{
+    display:flex;
+    flex-wrap:wrap;
+    gap:8px;
+  }
+  .case-links a{
+    font-family:'IBM Plex Mono',monospace;
+    font-size:11px;
+    font-weight:500;
+    color:var(--ink);
+    text-decoration:none;
+    border:1px solid var(--line);
+    padding:5px 10px;
+    border-radius:var(--radius);
+    transition:border-color .15s ease, background .15s ease;
+  }
+  .case-links a.live{
+    border-color:var(--teal);
+    color:var(--teal);
+  }
+  .case-links a:hover, .case-links a:focus-visible{
+    border-color:var(--teal);
+    background:var(--teal-soft);
   }
 
   /* ---------- EXPERIENCE ---------- */
@@ -357,7 +384,7 @@
       <div class="id-fields">
         <div>
           <p class="field-label">GPA</p>
-          <p class="field-value">8.99 / 10</p>
+          <p class="field-value">9.03 / 10</p>
         </div>
         <div>
           <p class="field-label">Cohort</p>
@@ -383,15 +410,15 @@
 
     <div class="stats">
       <div class="stat">
-        <div class="stat-num">Top 250</div>
-        <div class="stat-label">of 10,000+ · Sama Build for Good</div>
+        <div class="stat-num">Finalist</div>
+        <div class="stat-label">10,000+ teams · Sama Build for Good</div>
       </div>
       <div class="stat">
         <div class="stat-num">2nd</div>
         <div class="stat-label">of 900+ · SolVIT Hackathon</div>
       </div>
       <div class="stat">
-        <div class="stat-num">4</div>
+        <div class="stat-num">5</div>
         <div class="stat-label">shipped products</div>
       </div>
       <div class="stat">
@@ -411,11 +438,33 @@
 
       <div class="case">
         <div class="case-head">
-          <h3 class="case-title">Rozgar Mitra</h3>
-          <span class="badge gold">TOP 250 / 10K+</span>
+          <h3 class="case-title"><a href="https://dispute-autopsy.vercel.app" target="_blank" rel="noopener">Dispute Autopsy</a></h3>
+          <span class="badge teal">LIVE</span>
+        </div>
+        <p>Evidence-based chargeback investigation engine built for the Razorpay Buildathon. A deterministic rule engine scores payment, delivery, refund and support evidence into a CONTEST / REVIEW / ACCEPT call; an LLM only explains the decision, never sets it.</p>
+        <p>Adds platform-level signals a single merchant can't see (cross-merchant repeat disputers, courier non-delivery anomalies, merchant dispute spikes) and a real Razorpay dispute webhook receiver.</p>
+        <div class="case-links">
+          <a class="live" href="https://dispute-autopsy.vercel.app" target="_blank" rel="noopener">Live ↗</a>
+          <a href="https://github.com/Shreya-Srivastava190/dispute-autopsy" target="_blank" rel="noopener">Code ↗</a>
+        </div>
+        <div class="tags">
+          <span class="tag">Python</span>
+          <span class="tag">Razorpay Webhooks</span>
+          <span class="tag">LLM</span>
+        </div>
+      </div>
+
+      <div class="case">
+        <div class="case-head">
+          <h3 class="case-title"><a href="https://rozgar-mitra-pearl.vercel.app/" target="_blank" rel="noopener">Rozgar Mitra</a></h3>
+          <span class="badge gold">FINALIST / 10K+</span>
         </div>
         <p>Two-sided job marketplace for India's informal skilled workforce. Digital Work Passport with reliability scoring, skill-based matching, and trust verification for gig workers and employers.</p>
         <p>Extended with AI wage intelligence, verified work certificates, and a financial trust profile. Built for Sama Initiative's "Build for Good" hackathon; carried into a NavGurukul fellowship application.</p>
+        <div class="case-links">
+          <a class="live" href="https://rozgar-mitra-pearl.vercel.app/" target="_blank" rel="noopener">Live ↗</a>
+          <a href="https://github.com/Shreya-Srivastava190/rozgar-mitra-github" target="_blank" rel="noopener">Code ↗</a>
+        </div>
         <div class="tags">
           <span class="tag">FastAPI</span>
           <span class="tag">React</span>
@@ -429,6 +478,9 @@
           <span class="badge teal">2ND / 900+</span>
         </div>
         <p>AI-powered chore management app with an intelligent task-allocation system. Led full-stack development end to end, from first idea to final pitch, as a first-year student.</p>
+        <div class="case-links">
+          <a href="https://github.com/Shreya-Srivastava190/ChoreUs" target="_blank" rel="noopener">Code ↗</a>
+        </div>
         <div class="tags">
           <span class="tag">React Native</span>
           <span class="tag">AI Integration</span>
@@ -441,6 +493,9 @@
           <span class="badge teal">SHIPPED</span>
         </div>
         <p>Offline-first facial recognition terminal using MobileFaceNet for zero-latency, on-device verification. Local SQLite cache with automated Supabase sync for data resilience in low-connectivity areas.</p>
+        <div class="case-links">
+          <a href="https://github.com/Shreya-Srivastava190/biometric" target="_blank" rel="noopener">Code ↗</a>
+        </div>
         <div class="tags">
           <span class="tag">Kotlin</span>
           <span class="tag">TFLite</span>
@@ -450,10 +505,16 @@
 
       <div class="case">
         <div class="case-head">
-          <h3 class="case-title">Movie Explorer & Utilities</h3>
+          <h3 class="case-title"><a href="https://shreya-srivastava190.github.io/Movie-Expllorer/" target="_blank" rel="noopener">Movie Explorer & Utilities</a></h3>
           <span class="badge teal">SHIPPED</span>
         </div>
         <p>Interactive movie search platform on the OMDb API with state management and wishlist persistence, plus a weather dashboard and task manager built around API chaining and async patterns.</p>
+        <div class="case-links">
+          <a class="live" href="https://shreya-srivastava190.github.io/Movie-Expllorer/" target="_blank" rel="noopener">Live: Movies ↗</a>
+          <a class="live" href="https://shreya-srivastava190.github.io/Weather-App/" target="_blank" rel="noopener">Live: Weather ↗</a>
+          <a class="live" href="https://shreya-srivastava190.github.io/Task-Manager/" target="_blank" rel="noopener">Live: Tasks ↗</a>
+          <a href="https://github.com/Shreya-Srivastava190/Movie-Expllorer" target="_blank" rel="noopener">Code ↗</a>
+        </div>
         <div class="tags">
           <span class="tag">JavaScript</span>
           <span class="tag">REST APIs</span>
